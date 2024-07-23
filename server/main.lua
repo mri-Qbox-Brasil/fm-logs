@@ -1,5 +1,5 @@
 -- Your API key for Fivemerr
-FivemerrApiKey = "token"
+FivemerrApiKey = GetConvar("FIVEMERR_LOGS_API_KEY", "")
 
 -- API Urls
 FivemerrApiUrls = {

@@ -1,11 +1,11 @@
 Config = {
 
     -- Language to use
-    Language = "en",
+    Language = "pt-br",
 
     -- Framework for logging player names
     -- Standalone uses server player name
-    Framework = "standalone", -- "qb" | "esx" | "standalone"
+    Framework = "qb", -- "qb" | "esx" | "standalone"
 
     -- Event prefixes
     ClientEventPrefix = GetCurrentResourceName() .. ":Client:",
@@ -36,7 +36,7 @@ Config = {
         TxAdmin = true, -- TxAdmin logs
         Screenshot = true, -- Screenshot logs
 
-        -- The following attributes will be included in 
+        -- The following attributes will be included in
         -- the log meta data if true.
         PlayerAttributes = {
 
