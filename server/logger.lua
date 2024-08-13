@@ -69,7 +69,7 @@ Logger = {
 
                     -- Capture the screen
                     Logger.CapturePlayerScreen(data.Source, function (imageData)
-    
+
                         -- Check if it was successful
                         if not imageData then
                             Logger.ConsoleError('Unable to capture player screenshot')
@@ -113,7 +113,7 @@ Logger = {
 
     -- Outputs api token error to console
     ApiTokenError = function ()
-        print('^1Error: You have not set your Fivemerr Api token in your server.cfg. Please refer to the README.^0')
+        -- print('^1Error: You have not set your Fivemerr Api token in your server.cfg. Please refer to the README.^0')
     end,
 
     -- Checks a table to see if a key exists
@@ -205,19 +205,19 @@ Logger = {
 
         return playerDetails
     end,
-    
+
     -- Gets the player's postal
     GetPlayerPostal = function (src)
         local postalsFile = LoadResourceFile(GetCurrentResourceName(), "./json/postals.json")
         local postals = json.decode(postalsFile)
         local nearest = nil
-    
+
         local player = src
         local ped = GetPlayerPed(player)
         local playerCoords = GetEntityCoords(ped)
-    
+
         local x, y = table.unpack(playerCoords)
-    
+
         local ndm = -1
         local ni = -1
         for i, p in ipairs(postals) do
@@ -227,7 +227,7 @@ Logger = {
                 ndm = dm
             end
         end
-    
+
         if ni ~= -1 then
             local nd = math.sqrt(ndm)
             nearest = {i = ni, d = nd}
@@ -296,7 +296,7 @@ Logger = {
                     Logger.ConsoleError('CapturePlayerScreen - Error uploading screenshot. Status returned: ' .. status)
                     return cb(false)
                 end
-    
+
                 cb(json.decode(response))
             end, "POST", json.encode({ data = data }), {
                 ['Authorization'] = Logger.RetrieveApiToken(),
@@ -332,7 +332,7 @@ Logger = {
                 end
             end
         end
-    
+
         return message
     end,
 

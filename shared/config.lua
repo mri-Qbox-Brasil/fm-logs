@@ -1,7 +1,7 @@
 Config = {
 
     -- Language to use
-    Language = "pt-br",
+    Language = GetConvar("ox:locale", "pt-br"),
 
     -- Framework for logging player names
     -- Standalone uses server player name
