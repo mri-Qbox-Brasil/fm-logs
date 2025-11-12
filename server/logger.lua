@@ -99,6 +99,7 @@ Logger = {
         end
 
         -- Submit the request
+        TriggerEvent("fivelogs:log", json.encode(logData))
         PerformHttpRequest(FivemerrApiUrls.Logs, function(code, text, headers)
             if code ~= 200 then
                 Logger.ConsoleError('CreateLog: Fivemerr returned error response code: ' .. code)
